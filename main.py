@@ -34,11 +34,13 @@ def main():
     random_number = random.randint(1,2700)
     bot = telegram.Bot(bot_token)
     
-    os.makedirs(folder_name, mode=0o777, exist_ok=True)
-    comics_url, text_post = get_comics(random_number)
-    save_comics(comics_url, folder_name, random_number)
-    publish_photos(bot, chat_id, folder_name, text_post, random_number)
-    shutil.rmtree(folder_name)
+    try:
+        os.makedirs(folder_name, mode=0o777, exist_ok=True)
+        comics_url, text_post = get_comics(random_number)
+        save_comics(comics_url, folder_name, random_number)
+        publish_photos(bot, chat_id, folder_name, text_post, random_number)
+    finally:
+        shutil.rmtree(folder_name)
 
 
 if __name__ == '__main__':
