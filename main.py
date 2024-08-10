@@ -18,12 +18,12 @@ def get_comic(random_number_comic):
 def save_comic(comics_url, folder_name, random_number_comic):
     comics = requests.get(comics_url)
     comics.raise_for_status()
-    with open(f'{folder_name}/comics{random_number_comic}.png', 'wb') as file:
+    with open(os.path.join(folder_name, f'comic_{random_number_comic}.png'), 'wb') as file:
         file.write(comics.content)
 
 
 def publish_comic(bot, chat_id, folder_name, text_post, random_number_comic):
-    with open(f'{folder_name}/comics{random_number_comic}.png', 'rb') as document:
+    with open(os.path.join(folder_name, f'comic_{random_number_comic}.png'), 'rb') as document:
         bot.send_document(chat_id=chat_id, document=document, caption=text_post)
 
 def main():
