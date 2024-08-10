@@ -14,7 +14,15 @@ pip install -r requirements.txt
     - TELEGRAM_BOT_ID='7432940309:AAF2YvHoPr3VxfFFHIQxnXQjWzXUaDAQPfs'
     - CHAT_ID_TELEGRAM='@ id-чата'
 
-5. Запустите файл `main.py`.  
+5. Запустите файл `main.py`, как в примере:
+
+**Командная строка**
+
+```
+C:\Users\User>pip install -r requirements.txt
+C:\Users\User>cd C:\Users\User\Desktop\*название папки с проектом*>
+C:\Users\User\Desktop\*название папки с проектом*> python main.py
+```
 
 ### Цель проекта
 
